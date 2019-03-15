@@ -84,3 +84,8 @@ Plot(AR$residuals)
 Box.test(AR$residuals, lag=6,type="Ljung")
 Box.test(AR$residuals, lag=12,type="Ljung")
 Box.test(AR$residuals, lag=18,type="Ljung")
+
+Plot(MA$residuals)
+Box.test(MA$residuals, lag=6,type="Ljung")
+Box.test(MA$residuals, lag=12,type="Ljung")
+Box.test(MA$residuals, lag=18,type="Ljung")
