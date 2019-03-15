@@ -66,3 +66,15 @@ Box.test(stk_mkt2,lag=12,type = 'Ljung')
 ACF and PACF command to find P and Q value for AR and MA model
 pacf(coredata(stk_mkt2), lag=15)
 acf(coredata(stk_mkt2), lag=15)
+
+
+AR model 
+AR=arima(stk_mkt2,order=c(10,0,0), method = 'ML',include.mean = T)
+AR
+
+MA model 
+MA=arima(stk_mkt2,order=c(0,0,11), method = 'ML',include.mean = T)
+MA
+AUTOARIMA model 
+AutoArima=auto.arima(stk_mkt2)
+AutoArima
