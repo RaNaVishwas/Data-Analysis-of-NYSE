@@ -78,3 +78,9 @@ MA
 AUTOARIMA model 
 AutoArima=auto.arima(stk_mkt2)
 AutoArima
+
+Residual analysis commands for AR , MA and AUTOARIMA model
+Plot(AR$residuals)
+Box.test(AR$residuals, lag=6,type="Ljung")
+Box.test(AR$residuals, lag=12,type="Ljung")
+Box.test(AR$residuals, lag=18,type="Ljung")
