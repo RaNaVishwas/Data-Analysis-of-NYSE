@@ -103,3 +103,25 @@ Accuracy of AR,MA and AutoArima models(RMSE value)
 accuracy(AR)
 accuracy(MA)
 accuracy(AutoArima)
+
+
+Using RMSE as a metrics  AutoArima is the best model and used for prediction.
+
+Applied AutoArima model for future 21 months open price prediction
+ARMAFIT=auto.arima(stk_mkt2,d=2,approximation=FALSE, trace=FALSE)
+ZOpen=predict(ARMAFIT,n.ahead=21,se.fit=T)
+
+
+
+AUTOARIMA model and its reverse differencing prediction commands for High price column in dataset
+ARMAFIT1=auto.arima(stk_mkt,d=2,approximation=FALSE,trace=FALSE)
+ZHigh=predict(ARMAFIT1,n.ahead = 21, se.fit = T)
+ZHigh	
+
+
+
+Forecast command for AutoArima model
+a1=auto.arima(stk_mkt2)
+fr=forecast(a1)
+ plot(fr)
+
