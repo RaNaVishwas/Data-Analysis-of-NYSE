@@ -89,3 +89,17 @@ Plot(MA$residuals)
 Box.test(MA$residuals, lag=6,type="Ljung")
 Box.test(MA$residuals, lag=12,type="Ljung")
 Box.test(MA$residuals, lag=18,type="Ljung")
+
+Plot(AutoArima$residuals)
+Box.test(AutoArima$residuals, lag=6,type="Ljung") 
+Box.test(AutoArima$residuals, lag=12,type="Ljung")
+Box.test(AutoArima$residuals, lag=18,type="Ljung")
+
+Applied reverse differencing and test the testing data for December 2016
+ARMAFIT=auto.arima(stk_mkt2,d=2,approximation=FALSE, trace=FALSE)
+ZOpen=predict(ARMAFIT,n.ahead=1,se.fit=T)
+
+Accuracy of AR,MA and AutoArima models(RMSE value)
+accuracy(AR)
+accuracy(MA)
+accuracy(AutoArima)
