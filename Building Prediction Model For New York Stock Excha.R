@@ -54,3 +54,15 @@ hist(stk_mkt2, xlab="Yahoo close value", prob=TRUE, main="Histogram")
 xfit<-seq(min(stk_mkt2),max(stk_mkt2),length=40)
 yfit<-dnorm(xfit,mean=mean(stk_mkt2),sd=sd(stk_mkt2))
  lines(xfit, yfit, col="blue", lwd=2)
+
+ qqnorm(stk_mkt2)
+qqline(stk_mkt2, col=3)
+
+normalTest(stk_mkt2,method=c("jb"))
+
+Ljung box test command command(serial correlation)
+Box.test(stk_mkt2,lag=12,type = 'Ljung')
+
+ACF and PACF command to find P and Q value for AR and MA model
+pacf(coredata(stk_mkt2), lag=15)
+acf(coredata(stk_mkt2), lag=15)
